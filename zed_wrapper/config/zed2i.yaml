@@ -1,5 +1,6 @@
+
 # config/zed2i_yaml
-# Parameters for Stereolabs zed2i camera
+# Parameters for Stereolabs ZED2i camera
 ---
 /**:
     ros__parameters:
@@ -12,4 +13,16 @@
         depth:
             min_depth: 0.3 # Min: 0.3, Max: 3.0
             max_depth: 10.0 # Max: 40.0
+        
+        sensors:
+            enable_imu: true # Enable the IMU sensor
+            enable_imu_fusion: true # Enable IMU fusion (for odometry and pose estimation)
 
+        video:
+            rgb_topic: '/zed2i/rgb/image_raw' # Topic name for RGB stream
+            enable_rgb: true # Enable the RGB image stream
+            rgb_frame_rate: 30 # Frame rate for RGB image
+
+        positional_tracking:
+            enable_pose: true # Enable positional tracking using the IMU
+       
